@@ -1,0 +1,23 @@
+.footer {
+    /* background-color: #333333; */
+    /* background-color: #7cb08f; */
+    opacity: 0.6;
+    filter: Alpha(opacity=60);
+    text-align: center;
+    /* position: relative; */
+    bottom: 0;
+    left: 43.5%;
+    padding: 10px 0;
+}
+
+.footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 1em;
+}
+
+.footer-text p {
+    color: #000;
+    margin: 0.5em;
+}

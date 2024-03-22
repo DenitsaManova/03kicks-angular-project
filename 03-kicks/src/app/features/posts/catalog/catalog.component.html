@@ -1,0 +1,62 @@
+<div class="section-catalog">
+    <div class="collection">
+        <div class="wrapper"> 
+        <div class="product-card" *ngFor="let post of postsList">
+            <div class="media">
+                <!-- <img src="https://ddahkickz.com/cdn/shop/products/air-jordan-1-low-electric-green_2000x_2c4be88d-8aa7-44a2-9865-154d705b317a_700x.webp?v=1681301798" alt=""> -->
+                <a [routerLink]="['/sneakers', 'details', post._id]"><img src="{{ post.imageUrl }}" alt=""></a>
+            </div>
+            <div class="product-info">
+                <p class="title-model"><a [routerLink]="['/sneakers', 'details', post._id]">{{ post.model }}</a></p>
+                <p class="price">Price: {{ post.price }}</p>
+            </div>
+        </div>
+        <!-- <div class="product-card">
+            <div class="media">
+                <img src="https://ddahkickz.com/cdn/shop/products/AirJordan1MidMultiKnit_700x.webp?v=1676965500" alt="">
+            </div>
+            <div class="product-info">
+                <p class="title-model">Air Jordan 1 Mid Multi Knit</p>
+                <p class="price">Price: 450 BGN</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="media">
+                <img src="https://ddahkickz.com/cdn/shop/products/air-jordan-1-mid-taxi-wethenew-1_1_cbaf7366-6fdc-41f7-a96a-dc0115a84df1_700x.webp?v=16769731440" alt="">
+            </div>
+            <div class="product-info">
+                <p class="title-model">Air Jordan 1 Mid Taxi</p>
+                <p class="price">Price: 290 BGN</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="media">
+                <img src="https://ddahkickz.com/cdn/shop/products/air-jordan-4-seafoam-1_600x_d090fcd0-cfac-4d0a-b07d-8ba52fb23a3c_600x.webp?v=1678379079" alt="">
+            </div>
+            <div class="product-info">
+                <p class="title-model">Air Jordan Retro 4 Seafom</p>
+                <p class="price">Price: 620 BGN</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="media">
+                <img src="https://ddahkickz.com/cdn/shop/products/Air-Jordan-1-Low-Green-Toe-1_2000x_4440e9ce-aa7b-47b5-97cc-7f9e97af72c9_700x.webp?v=1681292732" alt="">
+            </div>
+            <div class="product-info">
+                <p class="title-model">Air Jordan 1 Low Green Toe</p>
+                <p class="price">Price: 490 BGN</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="media">
+                <img src="https://ddahkickz.com/cdn/shop/files/air-jordan-1-mid-space-jam-ddahkickz-1_png_700x.webp?v=1696857490" alt="">
+            </div>
+            <div class="product-info">
+                <p class="title-model">Air Jordan 1 Mid Space Jam</p>
+                <p class="price">Price: 390 BGN</p>
+            </div>
+        </div> -->
+
+    </div>
+    </div> 
+</div>

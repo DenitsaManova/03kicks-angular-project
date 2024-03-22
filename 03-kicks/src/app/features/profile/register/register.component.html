@@ -1,0 +1,13 @@
+<body>
+
+    <form class="form-container" #registerForm="ngForm" (ngSubmit)="registerMethod(registerForm)">
+        <h2 class="register-title"> Register </h2>
+        <input ngModel #email="ngModel" type="text" name="email" class="userName" placeholder="email">
+        <input ngModel #password="ngModel" type="password" name="password" class="userPassword" placeholder="password">
+        <input ngModel #repassword="ngModel" type="password" name="repeatPassword" class="userPassword" placeholder="repeat password">
+        <button class="registerBtn"> Register </button>
+        <p class="message">Already registered? <a routerLink="/login">Login</a></p>
+    </form>
+
+</body>
+

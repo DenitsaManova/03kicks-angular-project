@@ -1,0 +1,16 @@
+<div class="section-details" *ngIf="sneaker">
+    <div class="details-wrapper">
+        <div class="media">
+            <img src="{{ sneaker.imageUrl }}" alt="">
+        </div>
+        <div class="info">
+            <p class="model"><span>Model:</span> {{ sneaker.model }}</p>
+            <p class="price"><span>Price:</span> {{ sneaker.price }}</p>
+        </div>
+    </div>
+    <div class="btn-wrapper">
+        <a [routerLink]="['/sneakers', 'edit', sneaker._id]" class="btn">Edit</a>
+        <!-- <a [routerLink]="['/sneakers', 'delete', sneaker._id]" class="btn">Delete</a> -->
+        <!-- <a href="" class="btn">Buy</a> -->
+    </div>
+</div>

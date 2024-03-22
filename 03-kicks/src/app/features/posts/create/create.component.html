@@ -1,0 +1,13 @@
+<body>
+
+    <form #createForm="ngForm" (ngSubmit)="createMethod(createForm)" class="form-container">
+        <h2 class="create-title"> Create </h2>
+        <input ngModel #model="ngModel" type="text" name="model" class="model" placeholder="model">
+        <input ngModel #price="ngModel" type="text" name="price" class="price" placeholder="price">
+        <input ngModel #imageUrl="ngModel" type="text" name="imageUrl" class="imageUrl" placeholder="imageUrl">
+        <button class="createBtn"> Create </button>
+    </form>
+
+</body>
+
+

@@ -1,0 +1,13 @@
+<body>
+
+    <form class="form-container" #loginForm="ngForm" (ngSubmit)="loginMethod(loginForm)">
+        <h2 class="login-title"> Login </h2>
+        <input ngModel #email="ngModel" type="text" name="email" class="email" placeholder="email">
+        <input ngModel #password="ngModel" type="password" name="password" class="userPassword" placeholder="password">
+        <button class="loginBtn" type="submit"> Login </button>
+        <p class="message">
+            Not registered? <a routerLink="/register">Create an account</a>
+          </p>
+    </form>
+
+</body>

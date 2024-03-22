@@ -1,0 +1,64 @@
+/* @import url(../HeaderNav/Header.css); */
+
+.section-home-banner {
+    display: block;
+}
+
+.banner-title {
+    position: absolute;
+    margin: 0 auto;
+    padding: 13em;
+    padding-left: 6em;
+    line-height: 3.2em;
+}
+
+.banner-title h2 {
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.banner-wrapper{
+    /* position: absolute; */
+    height: 100%;
+    width: 100%;
+}
+
+.banner-wrapper img {
+    display: block;
+    width: 100%;
+}
+
+.section-brands {
+    margin: 3em 1em
+}
+
+.brands-title {
+    margin: 1em;
+    font-weight: 400;
+}
+
+.brands-title h2,
+.card-content h3 {
+    font-weight: 500;
+}
+
+.card-content h3 {
+    text-align: center;
+}
+
+.brands-wrapper {
+    display: flex;
+    gap: 1em;
+} 
+
+.card-wrapper { 
+    width: 30%;
+}   
+
+
+.media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+

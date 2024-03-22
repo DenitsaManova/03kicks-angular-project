@@ -1,0 +1,12 @@
+<body>
+
+    <form *ngIf="post" class="form-container" #editForm="ngForm" (ngSubmit)="editHandler(editForm)" ngClass="editForm">
+        <h2 class="edit-title"> Edit </h2>
+        <input ngModel #model="ngModel" [(ngModel)]="post.model" type="text" name="model" class="model" placeholder="model">
+        <input ngModel #price="ngModel" [(ngModel)]="post.price" type="text" name="price" class="price" placeholder="price">
+        <input ngModel #imageUrl="ngModel" [(ngModel)]="post.imageUrl" type="text" name="imageUrl" class="imageUrl" placeholder="imageUrl">
+        <button class="editBtn"> Edit </button>
+    </form>
+
+</body>
+
