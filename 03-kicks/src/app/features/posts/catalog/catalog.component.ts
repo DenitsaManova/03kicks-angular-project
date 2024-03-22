@@ -26,7 +26,7 @@ export class CatalogComponent implements OnInit, OnDestroy{
       },
       error: (error) => {
         if (error.message.includes('Unknown Error')) {
-          this.errorMessage = 'Server not connected!'
+          this.errorMessage = 'Server not connected'
         } else {
           this.errorMessage = error.error.message;
         }
