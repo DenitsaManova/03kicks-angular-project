@@ -40,7 +40,8 @@
 }
 
 .model,
-.price {
+.price,
+.likes {
     /* width: 90%; */
     /* margin: 30px auto;
     height: auto; */
@@ -49,7 +50,8 @@
 }
 
 .model > span,
-.price > span {
+.price > span,
+.likes > span {
     font-weight: 600;
 }
 
