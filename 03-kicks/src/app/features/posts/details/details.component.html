@@ -5,12 +5,33 @@
         </div>
         <div class="info">
             <p class="model"><span>Model:</span> {{ sneaker.model }}</p>
-            <p class="price"><span>Price:</span> {{ sneaker.price }}</p>
+            <p class="price"><span>Price:</span> {{ sneaker.price }} BGN</p>
+            <p class="likes"><span>Likes: {{ likes$ | async }}</span> </p>
         </div>
     </div>
     <div class="btn-wrapper">
-        <a [routerLink]="['/sneakers', 'edit', sneaker._id]" class="btn">Edit</a>
-        <!-- <a [routerLink]="['/sneakers', 'delete', sneaker._id]" class="btn">Delete</a> -->
-        <!-- <a href="" class="btn">Buy</a> -->
+        <ng-container *ngIf="isOwner">
+            <a [routerLink]="['/sneakers', 'edit', sneaker._id]" class="btn">Edit</a>
+            <a href="javascript:void(0)" (click)="removePost(sneaker._id)" class="btn">Delete</a> 
+        </ng-container>
+        <!-- <ng-container *ngIf="!isOwner">
+            <a href="" class="btn">Like</a> 
+        </ng-container> -->
+        <ng-container *ngIf="!isOwner && isLogged">
+            <div class="likeButtons">
+              <div *ngIf="(canLike$ | async) == 0">
+                <a href="javascript:void(0)" (click)="postLike(sneaker._id)" class="btn">
+                  Like
+                </a>
+              </div>
+    
+              <div *ngIf="(canLike$ | async) != 0">
+                <a href="javascript:void(0)">
+                  You have already liked this episode!
+                </a>
+              </div>
+    
+            </div>
+          </ng-container>
     </div>
 </div>
