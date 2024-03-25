@@ -18,18 +18,14 @@ import { PostsModule } from './features/posts/posts.module';
 import { RequestInterceptor } from './core/interceptors/request.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    // LoginComponent,
-    // RegisterComponent,
-    // CatalogComponent,
-    // CreateComponent,
-    // DetailsComponent,
-    // EditComponent
+  
   ],
   imports: [
     BrowserModule,
