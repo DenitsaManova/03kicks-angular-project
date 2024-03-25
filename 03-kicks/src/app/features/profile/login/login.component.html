@@ -2,9 +2,21 @@
 
     <form class="form-container" #loginForm="ngForm" (ngSubmit)="loginMethod(loginForm)">
         <h2 class="login-title"> Login </h2>
-        <input ngModel #email="ngModel" type="text" name="email" class="email" placeholder="email">
-        <input ngModel #password="ngModel" type="password" name="password" class="userPassword" placeholder="password">
-        <button class="loginBtn" type="submit"> Login </button>
+        
+        <input ngModel #email="ngModel" type="text" autofocus placeholder="username@abv.bg" required pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$" name="email" class="email">
+        <ng-container *ngIf="email.invalid && email.touched">
+            <div *ngIf="email.errors?.['required']">Email is required! </div>
+            <div *ngIf="email.errors?.['pattern']">Email must be in a valid format!</div>
+        </ng-container>
+        
+        <input ngModel #password="ngModel" type="password" name="password" class="userPassword" placeholder="******" required pattern="^(?!\s)(?=\D*\d).{6,}$" minlength="6">
+        <ng-container *ngIf="password.invalid && password.touched">
+            <div *ngIf="password.errors?.['required']">Password is required </div>
+            <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long!</div>
+            <div *ngIf="password.errors?.['pattern']">Password must be in a valid format!</div>
+        </ng-container>
+   
+        <button [disabled]="loginForm.invalid" class="loginBtn" type="submit"> Login </button>
         <p class="message">
             Not registered? <a routerLink="/register">Create an account</a>
           </p>
