@@ -2,10 +2,26 @@
 
     <form class="form-container" #registerForm="ngForm" (ngSubmit)="registerMethod(registerForm)">
         <h2 class="register-title"> Register </h2>
-        <input ngModel #email="ngModel" type="text" name="email" class="userName" placeholder="email">
-        <input ngModel #password="ngModel" type="password" name="password" class="userPassword" placeholder="password">
-        <input ngModel #repassword="ngModel" type="password" name="repeatPassword" class="userPassword" placeholder="repeat password">
-        <button class="registerBtn"> Register </button>
+        <input ngModel #email="ngModel" type="text" name="email" class="userName" autofocus placeholder="username@abv.bg" required pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$">
+        <ng-container *ngIf="email.invalid && email.touched">
+            <div *ngIf="email.errors?.['required']">Email is required! </div>
+            <div *ngIf="email.errors?.['pattern']">Email must be in a valid format!</div>
+        </ng-container>
+
+        <input ngModel #password="ngModel" type="password" name="password" class="userPassword" placeholder="******" required pattern="^(?!\s)(?=\D*\d).{6,}$" minlength="6">
+        <ng-container *ngIf="password.invalid && password.touched">
+            <div *ngIf="password.errors?.['required']">Password is required!</div>
+            <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long!</div>
+            <div *ngIf="password.errors?.['pattern']">Password must be in a valid format!</div>
+        </ng-container>
+        <input ngModel #repeatPassword="ngModel" type="password" name="repeatPassword" class="userPassword" placeholder="confirm password" required pattern="^(?!\s)(?=\D*\d).{6,}$" minlength="6">
+        <ng-container *ngIf="!password.invalid || (repeatPassword.invalid && repeatPassword.touched)">
+            <div *ngIf="repeatPassword.errors?.['required']">Password is required!</div>
+            <div *ngIf="repeatPassword.errors?.['minlength']">Password must be at least 6 characters long!</div>
+            <div *ngIf="password.value != repeatPassword.value">Passwords doesn't match!</div>
+          </ng-container>
+
+        <button [disabled]="registerForm.invalid || password.value != repeatPassword.value" class="registerBtn"> Register </button>
         <p class="message">Already registered? <a routerLink="/login">Login</a></p>
     </form>
 
