@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { PostInterface } from 'src/app/core/interfaces/Post';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { PostsService } from 'src/app/core/services/posts.service';
 
 @Component({
@@ -16,16 +17,16 @@ export class CreateComponent implements OnInit, OnDestroy {
   subscribe!: Subscription;
   errorMessage!: string;
 
-  constructor(private PostsService: PostsService, private titleService: Title, private router: Router,) { }
+  constructor(private PostsService: PostsService, private titleService: Title, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Create');
   }
 
   createMethod(formData: NgForm) {
-    // const userId = this.authService.getUserData()?._id;
+    const userId = this.authService.getUserData()?._id;
     const userInput = formData.value;
-    // userInput._ownerId = userId;
+    userInput._ownerId = userId;
 
     this.PostsService.getAllPosts().subscribe({
       next: (posts: PostInterface[]) => {
@@ -40,14 +41,14 @@ export class CreateComponent implements OnInit, OnDestroy {
           })
 
         }
-        // error: (error) => {
-        //   if (error.message.includes('Unknown Error')) {
-        //     this.errorMessage = 'Server not connected!'
-        //   } else {
-        //     this.errorMessage = error.error.message;
-        //   }
-        // }
-      }
+      },
+      error: (error) => {
+           if (error.message.includes('Unknown Error')) {
+             this.errorMessage = 'Server not connected!'
+           } else {
+             this.errorMessage = error.error.message;
+           }
+         }
       })
     
   }
