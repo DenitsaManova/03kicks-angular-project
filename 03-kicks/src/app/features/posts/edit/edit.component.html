@@ -2,10 +2,25 @@
 
     <form *ngIf="post" class="form-container" #editForm="ngForm" (ngSubmit)="editHandler(editForm)" ngClass="editForm">
         <h2 class="edit-title"> Edit </h2>
-        <input ngModel #model="ngModel" [(ngModel)]="post.model" type="text" name="model" class="model" placeholder="model">
-        <input ngModel #price="ngModel" [(ngModel)]="post.price" type="text" name="price" class="price" placeholder="price">
-        <input ngModel #imageUrl="ngModel" [(ngModel)]="post.imageUrl" type="text" name="imageUrl" class="imageUrl" placeholder="imageUrl">
-        <button class="editBtn"> Edit </button>
+        <input ngModel #model="ngModel" [(ngModel)]="post.model" type="text" name="model" class="model" autofocus required minlength="4">
+        <ng-container *ngIf="model.invalid && model.touched">
+            <div *ngIf="model.errors?.['required']">Model is required!</div>
+            <div *ngIf="model.errors?.['minlength']">Model must be at least 4 characters long!</div>
+        </ng-container>
+
+        <input ngModel #price="ngModel" [(ngModel)]="post.price" type="text" name="price" class="price" pattern="^(?!\s)(?=\D*\d).{1,}$" required>
+        <ng-container *ngIf="price.invalid && price.touched">
+            <div *ngIf="price.errors?.['required']">Price is required!</div>
+            <div *ngIf="price.errors?.['pattern']">Price must be in a valid format!</div>
+        </ng-container>
+
+        <input ngModel #imageUrl="ngModel" [(ngModel)]="post.imageUrl" type="text" name="imageUrl" class="imageUrl" pattern="^(?!\s)(?=\D*\d).{6,}$" required>
+        <ng-container *ngIf="imageUrl.invalid && imageUrl.touched">
+            <div *ngIf="imageUrl.errors?.['required']">Image is required!</div>
+            <div *ngIf="imageUrl.errors?.['pattern']">Image must be in a valid format!</div>
+        </ng-container>
+
+        <button [disabled]="editForm.invalid" class="editBtn"> Edit </button>
     </form>
 
 </body>
