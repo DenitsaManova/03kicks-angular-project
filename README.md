@@ -28,5 +28,28 @@ Pages:
     ![home](./03%20kicks%20ReadMe/home-page-2.png)
 
    - Sneakers Page: 
-    ![sneakers](03 kicks ReadMe\sneakers-page.png)
+    ![sneakers](./03%20kicks%20ReadMe/sneakers-page.png)
+
+   - Details page for not authenticated user: 
+    ![details](./03%20kicks%20ReadMe/details-page-for-not-authenticated-user.png)
+
+   - Details page for authenticated user: 
+    ![details](./03%20kicks%20ReadMe/details-page-for-authenticated-user.png)
+
+   - Details page for owner: 
+    ![details](./03%20kicks%20ReadMe/details-page-for-owner.png)
+
+   - Edit Page: 
+    ![edit](./03%20kicks%20ReadMe/edit-page.png)
+
+   - Create Page: 
+    ![create](./03%20kicks%20ReadMe/create-page.png)
+
+   - Login Page: 
+    ![login](/03%20kicks%20ReadMe/login-page.png)
+
+   - Register Page: 
+    ![register](./03%20kicks%20ReadMe/register-page.png)
+
+  
 
