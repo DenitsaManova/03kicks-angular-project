@@ -8,7 +8,7 @@
             <div *ngIf="model.errors?.['minlength']">Model must be at least 4 characters long!</div>
         </ng-container>
         
-        <input ngModel #price="ngModel" type="text" name="price" class="price" placeholder="price" pattern="^(?=\D*\d\s\S).{1,}$" required>
+        <input ngModel #price="ngModel" type="text" name="price" class="price" placeholder="price" pattern="^(?!\s)(?=\D*\d).{1,}$" required>
         <ng-container *ngIf="price.invalid && price.touched">
             <div *ngIf="price.errors?.['required']">Price is required!</div>
             <div *ngIf="price.errors?.['pattern']">Price must be in a valid format!</div>
