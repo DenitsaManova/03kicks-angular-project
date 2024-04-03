@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.errorMessage = 'Server not connected!'
         } else {
           this.errorMessage = error.error.message;
+          alert('Invalid email or password');
         }
       }
     });
