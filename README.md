@@ -25,7 +25,7 @@ SoftUni other requirements:
 Pages:
    - Home Page: 
     ![home](./03%20kicks%20ReadMe/home-page-1.png)
-    ![home](03 kicks ReadMe\home-page-2.png)
+    ![home](./03%20kicks%20ReadMe/home-page-2.png)
 
    - Sneakers Page: 
     ![sneakers](03 kicks ReadMe\sneakers-page.png)
