@@ -24,7 +24,7 @@ SoftUni other requirements:
   
 Pages:
    - Home Page: 
-    ![home](03 kicks ReadMe\home-page-1.png)
+    ![home](D:\03kikcks-angular-project\03 kicks ReadMe\home-page-1.png)
     ![home](03 kicks ReadMe\home-page-2.png)
 
    - Sneakers Page: 
